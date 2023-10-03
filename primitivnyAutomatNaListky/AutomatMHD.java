@@ -78,4 +78,8 @@ public class AutomatMHD {
         this.trzba = 0;
         return povodnaTrzba;
     }
+    
+    public void nastavCenuListka(int cenaListka) {
+        this.cenaListka = cenaListka;
+    }
 }
