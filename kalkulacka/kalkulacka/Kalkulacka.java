@@ -60,6 +60,16 @@ public class Kalkulacka {
         this.vysledok = medzivysledok;
     }
     
+    public void druhaOdmocnina() {
+        double medzivysledok = this.vysledok / 2;
+        
+        for (int i = 0; i < 10; i++) {
+            medzivysledok = (medzivysledok + this.vysledok / medzivysledok) / 2;
+        }
+        
+        this.vysledok = medzivysledok;
+    }
+    
     public double getVysledok() {
         return this.vysledok;
     }
