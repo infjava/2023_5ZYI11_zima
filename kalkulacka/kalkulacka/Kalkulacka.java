@@ -44,6 +44,14 @@ public class Kalkulacka {
         this.vysledok *= this.vysledok;
     }
     
+    public void faktorial() {
+        double medzivysledok = 1;
+        for (int i = 1; i <= this.vysledok; i++) {
+            medzivysledok *= i;
+        }
+        this.vysledok = medzivysledok;
+    }
+    
     public double getVysledok() {
         return this.vysledok;
     }
