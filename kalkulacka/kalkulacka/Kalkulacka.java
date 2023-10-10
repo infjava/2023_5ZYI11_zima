@@ -10,16 +10,16 @@ public class Kalkulacka {
     public void zadajCislo(double cislo) {
         switch (this.operacia) {
             case '+':
-                this.vysledok = this.vysledok + cislo;
+                this.vysledok += cislo;
                 break;
             case '-':
-                this.vysledok = this.vysledok - cislo;
+                this.vysledok -= cislo;
                 break;
             case '*':
-                this.vysledok = this.vysledok * cislo;
+                this.vysledok *= cislo;
                 break;
             case '/':
-                this.vysledok = this.vysledok / cislo;
+                this.vysledok /= cislo;
                 break;
         }
     }
