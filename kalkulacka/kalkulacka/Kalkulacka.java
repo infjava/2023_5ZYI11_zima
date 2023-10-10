@@ -49,6 +49,14 @@ public class Kalkulacka {
         for (int i = 1; i <= this.vysledok; i++) {
             medzivysledok *= i;
         }
+        /*int i = 1;
+        while (i <= this.vysledok) {
+            medzivysledok *= i;
+            i++;
+        }*/
+        /*for (int i = (int)this.vysledok; i >= 1; i--) {
+            medzivysledok *= i;
+        }*/
         this.vysledok = medzivysledok;
     }
     
