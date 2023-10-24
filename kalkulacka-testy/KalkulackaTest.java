@@ -21,6 +21,14 @@ public class KalkulackaTest {
         
     }
 
+    @Test
+    public void scitaj2a3()
+    {
+        Kalkulacka kalkulac1 = new Kalkulacka();
+        kalkulac1.zadajCislo(2);
+        kalkulac1.pripocitaj(3);
+        assertEquals(5, kalkulac1.getVysledok(), 0.1);
+    }
 }
 
 
