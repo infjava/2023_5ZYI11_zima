@@ -60,7 +60,7 @@ public class Kalkulacka {
      * @param cislo Cislo na vynasobenie.
      */
     public void vynasob(double cislo) {
-        this.vysledok += cislo;
+        this.vysledok *= cislo;
     }
 
     /**
