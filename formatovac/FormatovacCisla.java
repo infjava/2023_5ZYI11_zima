@@ -35,7 +35,7 @@ public class FormatovacCisla {
      */
     public String getCislo(int pocetDesatinnychMiest) {
         // TODO Doprogramujte:
-        return "";       
+        return String.format("%." + pocetDesatinnychMiest + "f", this.cislo);
     }
     
     /**
