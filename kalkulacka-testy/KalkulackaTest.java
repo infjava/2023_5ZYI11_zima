@@ -46,6 +46,14 @@ public class KalkulackaTest {
         kalkulac1.vydel(2);
         assertEquals(0.5, kalkulac1.getVysledok(), 0.1);
     }
+
+    @Test
+    public void vypocitaj2plus3()
+    {
+        kalkulac1.zadajCislo(2);
+        assertEquals(true, kalkulac1.vypocitaj("+", 3));
+        assertEquals(5, kalkulac1.getVysledok(), 0.1);
+    }
 }
 
 
