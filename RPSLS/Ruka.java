@@ -9,23 +9,7 @@ public class Ruka {
             this.aktGesto = 0;
         }
         
-        switch (this.aktGesto) {
-            case 0:
-                this.obrGesto = new Obrazok("pics/rock.png");
-                break;
-            case 1:
-                this.obrGesto = new Obrazok("pics/paper.png");
-                break;
-            case 2:
-                this.obrGesto = new Obrazok("pics/scissors.png");
-                break;
-            case 3:
-                this.obrGesto = new Obrazok("pics/lizard.png");
-                break;
-            case 4:
-                this.obrGesto = new Obrazok("pics/spock.png");
-                break;
-        }
+        this.obrGesto = new Obrazok("pics/" + this.getNazovGesta() + ".png");
         this.obrGesto.zmenPolohu(suradnicaX, suradnicaY);
         this.obrGesto.zobraz();
     }
@@ -70,22 +54,6 @@ public class Ruka {
     }
     
     private void ukazGesto() {
-        switch (this.aktGesto) {
-            case 0:
-                this.obrGesto.zmenObrazok("pics/rock.png");
-                break;
-            case 1:
-                this.obrGesto.zmenObrazok("pics/paper.png");
-                break;
-            case 2:
-                this.obrGesto.zmenObrazok("pics/scissors.png");
-                break;
-            case 3:
-                this.obrGesto.zmenObrazok("pics/lizard.png");
-                break;
-            case 4:
-                this.obrGesto.zmenObrazok("pics/spock.png");
-                break;
-        }
+        this.obrGesto.zmenObrazok("pics/" + this.getNazovGesta() + ".png");
     }
 }
