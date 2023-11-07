@@ -3,7 +3,7 @@ public class Ruka {
     private Obrazok obrGesto;
     
     public Ruka(int suradnicaX, int suradnicaY, int cisloGesta) {
-        if (cisloGesta >= 0 && cisloGesta <= 4) {
+        if (this.jeKorektneGesto(cisloGesta)) {
             this.aktGesto = cisloGesta;
         } else {
             this.aktGesto = 0;
@@ -32,13 +32,19 @@ public class Ruka {
     }
     
     public void setGesto(int cislo) {
-        this.aktGesto = cislo;
+        if (this.jeKorektneGesto(cislo)) {
+            this.aktGesto = cislo;
+        }
         
         this.ukazGesto();
     }
     
     public void setNasledujuceGesto() {
-        this.aktGesto = (this.aktGesto + 1) % 5;
+        //this.aktGesto = (this.aktGesto + 1) % 5;
+        this.aktGesto++;
+        if (!this.jeKorektneGesto(this.aktGesto)) {
+            this.aktGesto = 0;
+        }
         
         this.ukazGesto();
     }
@@ -46,7 +52,7 @@ public class Ruka {
     public void setPredchadzajuceGesto() {
         // this.aktGesto = (this.aktGesto + 4) % 5;
         this.aktGesto--;
-        if (this.aktGesto < 0) {
+        if (!this.jeKorektneGesto(this.aktGesto)) {
             this.aktGesto = 4;
         }
         
@@ -55,5 +61,9 @@ public class Ruka {
     
     private void ukazGesto() {
         this.obrGesto.zmenObrazok("pics/" + this.getNazovGesta() + ".png");
+    }
+    
+    private boolean jeKorektneGesto(int cisloGesta) {
+        return cisloGesta >= 0 && cisloGesta <= 4;
     }
 }
