@@ -3,8 +3,13 @@ public class Ruka {
     private Obrazok obrGesto;
     
     public Ruka(int suradnicaX, int suradnicaY, int cisloGesta) {
-        this.aktGesto = cisloGesta;
-        switch (cisloGesta) {
+        if (cisloGesta >= 0 && cisloGesta <= 4) {
+            this.aktGesto = cisloGesta;
+        } else {
+            this.aktGesto = 0;
+        }
+        
+        switch (this.aktGesto) {
             case 0:
                 this.obrGesto = new Obrazok("pics/rock.png");
                 break;
