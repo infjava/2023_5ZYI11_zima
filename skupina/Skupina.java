@@ -1,10 +1,16 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.File;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 public class Skupina {
     private ArrayList<Osoba> osoby;
+    private String nazovSkupiny;
         
     public Skupina(String nazovSkupiny) {
         this.osoby = new ArrayList<Osoba>();
+        this.nazovSkupiny = nazovSkupiny;
     }
     
     public void pridajObjektOsoba(Osoba novaOsoba) {
@@ -87,5 +93,30 @@ public class Skupina {
             this.osoby.remove(0);
         }*/
         this.osoby.clear();
+    }
+    
+    public void zapisDoSuboru() throws IOException {
+        File subor = new File(this.nazovSkupiny + ".txt");
+        PrintWriter zapisovac = new PrintWriter(subor);
+        
+        for (Osoba osoba : this.osoby) {
+            zapisovac.format("%s %s%n", osoba.getMeno(), osoba.getPriezvisko());
+        }
+        
+        zapisovac.close();
+    }
+    
+    public void nacitajZoSuboru() throws IOException {
+        File subor = new File(this.nazovSkupiny + ".txt");
+        Scanner citac = new Scanner(subor);
+        
+        this.osoby.clear();
+        while (citac.hasNext()) {
+            String meno = citac.next();
+            String priezvisko = citac.next();
+            this.osoby.add(new Osoba(meno, priezvisko));
+        }
+        
+        citac.close();
     }
 }
