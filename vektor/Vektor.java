@@ -19,10 +19,13 @@ public class Vektor {
     }
     
     public void vypisVektor() {
-        // osetrit ciarku na konci
         System.out.print("(");
         for (double zlozka : this.vektor) {
-            System.out.format("%.2f; ", zlozka);
+            if (this.vektor[this.vektor.length - 1] == zlozka) {
+                System.out.format("%.2f", zlozka);
+            } else {
+                System.out.format("%.2f; ", zlozka);
+            }
         }
         System.out.println(")");
     }
