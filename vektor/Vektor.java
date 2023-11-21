@@ -22,7 +22,7 @@ public class Vektor {
         // osetrit ciarku na konci
         System.out.print("(");
         for (double zlozka : this.vektor) {
-            System.out.format("%.2f,", zlozka);
+            System.out.format("%.2f; ", zlozka);
         }
         System.out.println(")");
     }
