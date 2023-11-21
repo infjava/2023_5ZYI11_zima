@@ -20,14 +20,14 @@ public class Vektor {
     
     public void vypisVektor() {
         System.out.print("(");
-        int index = 0;
+        boolean jePrvy = true;
         for (double zlozka : this.vektor) {
-            if (this.vektor.length - 1 == index) {
+            if (jePrvy) {
                 System.out.format("%.2f", zlozka);
             } else {
-                System.out.format("%.2f; ", zlozka);
+                System.out.format("; %.2f", zlozka);
             }
-            index++;
+            jePrvy = false;
         }
         System.out.println(")");
     }
