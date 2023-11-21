@@ -6,7 +6,13 @@ public class Vektor {
     }
     
     public double skalarnySucin(Vektor vektorB) {
-        // doplnit kod
+        if (this.getDlzka() == vektorB.getDlzka()) {
+            double sucin = 0;
+            for (int i = 0; i < this.getDlzka(); i++) {
+                sucin += this.getPrvok(i) * vektorB.getPrvok(i);
+            }
+            return sucin;
+        }
         return 0;
     }
     
