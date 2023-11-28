@@ -8,13 +8,12 @@ public class ZoznamTimov {
     }
     
     public boolean pridajTim(Tim pridavany) {
-        if (this.getTim(pridavany.getNazovTimu()) == null) {
-            this.zoznamTimov.add(pridavany);
-            
-            return true;
+        if (this.getTim(pridavany.getNazovTimu()) != null) {
+            return false;
         }
         
-        return false;
+        this.zoznamTimov.add(pridavany);
+        return true;
     }
     
     public Tim getTim(String nazovHladaneho) {
