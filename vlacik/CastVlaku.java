@@ -43,4 +43,8 @@ public class CastVlaku {
             );
         }
     }
+    
+    public void posun(Smer smer) {
+        
+    }
 }
