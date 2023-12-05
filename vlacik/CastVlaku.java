@@ -5,6 +5,7 @@ public class CastVlaku {
     
     private Poloha poloha;
     private final Obrazok obrazok;
+    private CastVlaku dalsiaCast;
     
     public CastVlaku(Poloha poloha, TypCastiVlaku typ) {
         this.poloha = poloha;
@@ -15,6 +16,8 @@ public class CastVlaku {
         );
         this.obrazok.zmenUhol(poloha.getSmer().getUhol());
         this.obrazok.zobraz();
+        
+        this.dalsiaCast = null;
     }
     
     public Poloha getPoloha() {
@@ -28,5 +31,16 @@ public class CastVlaku {
             poloha.getY() * CastVlaku.VELKOST_POLICKA
         );
         this.obrazok.zmenUhol(poloha.getSmer().getUhol());
+    }
+    
+    public void pripojCast(TypCastiVlaku typ) {
+        if (this.dalsiaCast != null) {
+            this.dalsiaCast.pripojCast(typ);
+        } else {
+            this.dalsiaCast = new CastVlaku(
+                this.poloha.getPosunutuPolohu(-1, this.poloha.getSmer()),
+                typ
+            );
+        }
     }
 }
